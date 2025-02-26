@@ -16,7 +16,7 @@ starter.registerHook(
             "description": data.payment,
         }
         const create = await axios.post('https://payment.zarinpal.com/pg/v4/payment/request.json', inputdata)
-        if (create.data.trackId) {
+        if (create.data.code == 100) {
             return {
                 status: true,
                 data: {

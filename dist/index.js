@@ -71,7 +71,7 @@ starter.registerHook(webito_plugin_sdk_1.default.hooks.paymentsCreate, function 
                     return [4 /*yield*/, axios_1.default.post('https://payment.zarinpal.com/pg/v4/payment/request.json', inputdata)];
                 case 1:
                     create = _b.sent();
-                    if (create.data.trackId) {
+                    if (create.data.code == 100) {
                         return [2 /*return*/, {
                                 status: true,
                                 data: __assign(__assign({}, (create.data || {})), { url: 'https://payment.zarinpal.com/pg/StartPay/' + create.data.authority })
